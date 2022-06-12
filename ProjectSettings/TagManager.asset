@@ -11,6 +11,7 @@ TagManager:
   - Tiro
   - Fogo
   - Explosao
+  - TamanhoMenor
   layers:
   - Default
   - TransparentFX

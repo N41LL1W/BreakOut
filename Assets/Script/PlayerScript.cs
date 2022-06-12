@@ -42,6 +42,7 @@ public class PlayerScript : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(direcao * velocidade, 0);
     }
 
+    //Codigo que instancia os PowerUps
     void OnTriggerEnter2D(Collider2D outro) 
     {
        if(outro.gameObject.tag == "Tamanho")
@@ -49,12 +50,19 @@ public class PlayerScript : MonoBehaviour
            GetComponent<Animator>().Play("aumenta_player");
            Destroy(outro.gameObject);
        } 
+
+       if(outro.gameObject.tag == "TamanhoMenor")
+       {
+           GetComponent<Animator>().Play("diminui_player");
+           Destroy(outro.gameObject);
+       } 
+       
        
        if(outro.gameObject.tag == "Tiro")
        {
            if(podeAtirar == false)
            {
-                timer = 10;
+                timer = 5;
                 podeAtirar = true;
            }
            Destroy(outro.gameObject);
@@ -62,7 +70,7 @@ public class PlayerScript : MonoBehaviour
 
        if(outro.gameObject.tag == "Fogo")
        {
-           StartCoroutine(bolaFogo(10));
+           StartCoroutine(bolaFogo(5));
 
            Destroy(outro.gameObject);
        }

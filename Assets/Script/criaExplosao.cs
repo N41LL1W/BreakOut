@@ -10,12 +10,6 @@ public class criaExplosao : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D outro) 
     {
         if(outro.gameObject.tag == "Bloco")
