@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 325641215837384953}
   - component: {fileID: 6973972079433344408}
   - component: {fileID: 4875388547975687545}
+  - component: {fileID: -3402680104915497094}
   m_Layer: 0
   m_Name: Bloco_Marrom
-  m_TagString: Bloco
+  m_TagString: Bloco_Marrom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0971428, y: 0.36571428}
   m_EdgeRadius: 0
+--- !u!114 &-3402680104915497094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6055897571125290615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455dd122c0969848b41905de56d9c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

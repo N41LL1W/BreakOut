@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +24,7 @@ public class BolaScript : MonoBehaviour
     void Start()
     {
         scriptPlayer = GameObject.Find("Player").GetComponent<PlayerScript>();
-        //GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2, 2), velBola);
+        //GetComponent<Rigidbody2D>().velocity = new Vector2(UnityEngine.Random.Range(-2, 2), velBola);
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class BolaScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !comecou)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2f, 2f), velBola);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(UnityEngine.Random.Range(-2f, 2f), velBola);
             comecou = true;
         }
 
@@ -64,14 +66,14 @@ public class BolaScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D outro)
     {
-        if(outro.gameObject.tag == "Bloco")
+        if(outro.gameObject.tag == "Bloco_Amarelo" || outro.gameObject.tag == "Bloco_Azul" || outro.gameObject.tag == "Bloco_AzulClaro" || outro.gameObject.tag == "Bloco_Cinza" || outro.gameObject.tag == "Bloco_Laranja" || outro.gameObject.tag == "Bloco_Marrom" || outro.gameObject.tag == "Bloco_Roxo" || outro.gameObject.tag == "Bloco_Verde" || outro.gameObject.tag == "Bloco_VerdeEscuro" || outro.gameObject.tag == "Bloco_Vermelho")
         {
             if(scriptPlayer.ativaExplosao)
                 Instantiate(Explosion, outro.transform.position, Quaternion.identity);
 
-            if(Random.Range(0f,1f) <= porcentagem)
+            if(UnityEngine.Random.Range(0f,1f) <= porcentagem)
             {
-                Instantiate(powerUps[Random.Range(0,powerUps.Length)], outro.gameObject.transform.position, Quaternion.identity);
+                Instantiate(powerUps[UnityEngine.Random.Range(0,powerUps.Length)], outro.gameObject.transform.position, Quaternion.identity);
             }
 
             Destroy(outro.gameObject);

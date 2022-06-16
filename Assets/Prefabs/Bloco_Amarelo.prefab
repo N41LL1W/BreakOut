@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 917740644862924255}
   - component: {fileID: 2408957444922361340}
   - component: {fileID: 1910395541487613907}
+  - component: {fileID: -1285636457072377476}
   m_Layer: 0
   m_Name: Bloco_Amarelo
-  m_TagString: Bloco
+  m_TagString: Bloco_Amarelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0971428, y: 0.36571428}
   m_EdgeRadius: 0
+--- !u!114 &-1285636457072377476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422814571628588623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455dd122c0969848b41905de56d9c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

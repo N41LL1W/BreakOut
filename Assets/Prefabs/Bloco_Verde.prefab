@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5939178746914409850}
   - component: {fileID: 93052284393689654}
   - component: {fileID: -3783900920157072842}
+  - component: {fileID: 290601632434124209}
   m_Layer: 0
   m_Name: Bloco_Verde
-  m_TagString: Bloco
+  m_TagString: Bloco_Verde
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0971428, y: 0.36571428}
   m_EdgeRadius: 0
+--- !u!114 &290601632434124209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043635975883725000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455dd122c0969848b41905de56d9c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

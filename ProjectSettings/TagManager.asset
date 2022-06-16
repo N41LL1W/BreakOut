@@ -12,6 +12,16 @@ TagManager:
   - Fogo
   - Explosao
   - TamanhoMenor
+  - Bloco_Amarelo
+  - Bloco_Azul
+  - Bloco_AzulClaro
+  - Bloco_Cinza
+  - Bloco_Laranja
+  - Bloco_Marrom
+  - Bloco_Roxo
+  - Bloco_Verde
+  - Bloco_VerdeEscuro
+  - Bloco_Vermelho
   layers:
   - Default
   - TransparentFX
@@ -46,6 +56,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 2660847581
+    locked: 0
+  - name: Blocos
+    uniqueID: 2816600311
+    locked: 0
+  - name: UserInterface
+    uniqueID: 1510699377
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
