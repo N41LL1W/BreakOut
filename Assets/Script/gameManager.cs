@@ -18,9 +18,14 @@ public class gameManager : MonoBehaviour
 
     public Text ScoreText;
 
+    public Slider VidaSlider; 
+
+    public int Vidas;
+
     // Start is called before the first frame update
     void Start()
     {
+        Vidas = 3;
         pontuacao = 0;
         scriptPlayer = GameObject.Find("Player").GetComponent<PlayerScript>();
         renderBolinha = GameObject.Find("Ball").GetComponent<SpriteRenderer>();
@@ -30,17 +35,20 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         ScoreText.text = pontuacao.ToString();
+        VidaSlider.value = Vidas;
 
-        if(scriptPlayer.podeAtirar && !scriptPlayer.ativaExplosao)
-            renderBolinha.sprite = sprBolinha[1];
-        
-        else if(!scriptPlayer.podeAtirar && scriptPlayer.ativaExplosao)
-            renderBolinha.sprite = sprBolinha[2];
+        if(Vidas > 0)
+        { 
+            if(scriptPlayer.podeAtirar && !scriptPlayer.ativaExplosao)
+                renderBolinha.sprite = sprBolinha[1];
+            
+            else if(!scriptPlayer.podeAtirar && scriptPlayer.ativaExplosao)
+                renderBolinha.sprite = sprBolinha[2];
 
-        else if(scriptPlayer.podeAtirar && scriptPlayer.ativaExplosao)
-            renderBolinha.sprite = sprBolinha[3];
-        else
-            renderBolinha.sprite = sprBolinha[0];
-
+            else if(scriptPlayer.podeAtirar && scriptPlayer.ativaExplosao)
+                renderBolinha.sprite = sprBolinha[3];
+            else
+                renderBolinha.sprite = sprBolinha[0];
+        }
     }
 }

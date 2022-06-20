@@ -20,9 +20,12 @@ public class BolaScript : MonoBehaviour
 
     public GameObject Explosion;
 
+    private gameManager gManagerScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        gManagerScript = GameObject.Find("GameManager").GetComponent<gameManager>();
         scriptPlayer = GameObject.Find("Player").GetComponent<PlayerScript>();
         //GetComponent<Rigidbody2D>().velocity = new Vector2(UnityEngine.Random.Range(-2, 2), velBola);
     }
@@ -90,10 +93,20 @@ public class BolaScript : MonoBehaviour
 
         if (outro.gameObject.tag == "ColisorBaixo")
         {
-            transform.position = new Vector2(jogador.transform.position.x, jogador.position.y + posicaoBolinha);
-            comecou = false;
+            if(gManagerScript.Vidas > 1)
+            {
+                gManagerScript.Vidas -= 1;
+                transform.position = new Vector2(jogador.transform.position.x, jogador.position.y + posicaoBolinha);
+                comecou = false;
 
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            }
+
+            else
+            {
+                gManagerScript.Vidas -= 1;
+                Destroy(gameObject);
+            }
         }
     }
 
