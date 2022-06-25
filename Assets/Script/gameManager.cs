@@ -1,3 +1,4 @@
+using System;
 using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ public class gameManager : MonoBehaviour
 
     public int Vidas;
 
+    public Button btReset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,8 @@ public class gameManager : MonoBehaviour
         pontuacao = 0;
         scriptPlayer = GameObject.Find("Player").GetComponent<PlayerScript>();
         renderBolinha = GameObject.Find("Ball").GetComponent<SpriteRenderer>();
+        btReset.onClick = new Button.ButtonClickedEvent();
+        btReset.onClick.AddListener(() => resetLevel());
     }
 
     // Update is called once per frame
@@ -50,5 +55,17 @@ public class gameManager : MonoBehaviour
             else
                 renderBolinha.sprite = sprBolinha[0];
         }
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+        }
+    }
+
+    public void resetLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

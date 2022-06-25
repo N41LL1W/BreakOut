@@ -1,8 +1,10 @@
+using System.Net.Mime;
 using System.Security.Cryptography;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BolaScript : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class BolaScript : MonoBehaviour
     public GameObject Explosion;
 
     private gameManager gManagerScript;
+
+    public Image gameOverImage;
+
+    public Image btReset;
 
     // Start is called before the first frame update
     void Start()
@@ -106,6 +112,8 @@ public class BolaScript : MonoBehaviour
             {
                 gManagerScript.Vidas -= 1;
                 Destroy(gameObject);
+                gameOverImage.enabled = true;
+                btReset.enabled = true;
             }
         }
     }
